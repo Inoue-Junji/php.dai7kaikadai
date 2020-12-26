@@ -11,13 +11,23 @@
   <form action="todo_create.php" method="POST">
     <fieldset>
       <legend>試合日誌（入力画面）</legend>
-      <a href="todo_read.php">一覧画面</a>
+      <a href="todo_read.php">試合結果一覧画面</a>
       <div>
-        todo: <input type="text" name="todo">
+        result: <input type="text" name="result">
       </div>
       <div>
-        deadline: <input type="date" name="deadline">
+        date: <input type="date" name="date">
       </div>
+      <div>
+        score: <input type="text" name="score">
+      </div>
+      <div>
+        starter: <input type="text" name="starter">
+      </div>
+      <div>
+        memo: <input type="text" name="memo">
+      </div>
+
       <div>
         <button>submit</button>
       </div>

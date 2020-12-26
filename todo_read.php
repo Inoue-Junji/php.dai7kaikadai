@@ -16,7 +16,7 @@ try {
 }
 // 「dbError:...」が表示されたらdb接続でエラーが発生していることがわかる.
 
-$sql = 'SELECT * FROM todo_table';
+$sql = 'SELECT * FROM result_table';
 $stmt = $pdo->prepare($sql);
 $status = $stmt->execute();
 // $statusにSQLの実行結果が入る（取得したデータではない点に注意）
@@ -29,8 +29,11 @@ if ($status==false) {
   $output = "";
   foreach ($result as $record) {
     $output .= "<tr>";
-    $output .= "<td>{$record["deadline"]}</td>";
-    $output .= "<td>{$record["todo"]}</td>";
+    $output .= "<td>{$record["date"]}</td>";
+    $output .= "<td>{$record["result"]}</td>";
+    $output .= "<td>{$record["score"]}</td>";
+    $output .= "<td>{$record["starter"]}</td>";
+    $output .= "<td>{$record["memo"]}</td>";
     $output .= "</tr>";
   }
 }
@@ -43,18 +46,21 @@ if ($status==false) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DB連携型todoリスト（一覧画面）</title>
+  <title>試合日誌（一覧画面）</title>
 </head>
 
 <body>
   <fieldset>
-    <legend>DB連携型todoリスト（一覧画面）</legend>
+    <legend>試合日誌（一覧画面）</legend>
     <a href="todo_input.php">入力画面</a>
     <table>
       <thead>
         <tr>
-          <th>deadline</th>
-          <th>todo</th>
+          <th>date</th>
+          <th>result</th>
+          <th>score</th>
+          <th>starter</th>
+          <th>memo</th>
         </tr>
       </thead>
       <tbody>
