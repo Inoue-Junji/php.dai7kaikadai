@@ -12,6 +12,7 @@
     <fieldset>
       <legend>試合日誌（入力画面）</legend>
       <a href="todo_read.php">試合結果一覧画面</a>
+      <a href="todo_logout.php">logout</a>
       <div>
         result: <input type="text" name="result">
       </div>
@@ -37,3 +38,8 @@
 </body>
 
 </html>
+
+<?php
+session_start();
+include('functions.php'); 
+check_session_id();
